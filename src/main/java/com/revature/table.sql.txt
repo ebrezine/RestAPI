@@ -1,0 +1,2 @@
+CREATE TABLE workers (username VARCHAR(500), password VARCHAR(500), is_manager BOOLEAN);
+CREATE TABLE tickets (id SERIAL, amount INT, ticket_description VARCHAR(500), ticket_status VARCHAR(8), created_by VARCHAR(500) references workers(username), pending BOOLEAN);
