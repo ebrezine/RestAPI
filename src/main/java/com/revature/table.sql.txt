@@ -1,2 +1,3 @@
-CREATE TABLE workers (username VARCHAR(500), password VARCHAR(500), is_manager BOOLEAN);
+CREATE TABLE users (username VARCHAR(500) UNIQUE, password VARCHAR(500), is_worker BOOLEAN);
 CREATE TABLE tickets (id SERIAL, amount INT, ticket_description VARCHAR(500), ticket_status VARCHAR(8), created_by VARCHAR(500) references workers(username), pending BOOLEAN);
+CREATE TABLE covid (username VARCHAR(500) references users(username), has_covid BOOLEAN, had_covid BOOLEAN, when DATE)
